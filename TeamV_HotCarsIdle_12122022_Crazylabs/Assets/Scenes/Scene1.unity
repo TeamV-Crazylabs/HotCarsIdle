@@ -4471,6 +4471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2de1eb1938d4d34fa8b8a1a25c1d54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disappearingEffect: {fileID: 2145888724706170800, guid: 3aa76a6cd24fe464492736f8b4f1ec65,
+    type: 3}
 --- !u!1 &1727572084
 GameObject:
   m_ObjectHideFlags: 0
@@ -4550,7 +4552,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1727572087}
   m_OnClick:
     m_PersistentCalls:

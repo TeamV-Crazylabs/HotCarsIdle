@@ -14,8 +14,12 @@ public class CarSpawner : MonoBehaviour
         carPool= GetComponent<CarPool>();
     }
 
-    public void SpawnCar(Button buyCar)
+    public void SpawnCar(Button buyCar, Button mergeCar)
     {
+        if (car1Count >= 1)
+        {
+            mergeCar.interactable= true;
+        }
         if (car1Count < 10)
         {
             carPool.GetPooledObject();

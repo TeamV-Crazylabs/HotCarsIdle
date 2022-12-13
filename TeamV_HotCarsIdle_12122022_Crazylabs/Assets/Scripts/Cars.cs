@@ -26,20 +26,15 @@ public class Cars : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Mouse Button Down");
-
             timer = 0;
             Time.timeScale = 2f;
             CarTrail.SetActive(true);
-
-            Debug.Log("timescale = " + Time.timeScale);
         }
 
         if (timer >= 1f)
         {
             Time.timeScale = 1f;
             CarTrail.SetActive(false);
-            Debug.Log("timescale = " + Time.timeScale);
         }
     }
 }

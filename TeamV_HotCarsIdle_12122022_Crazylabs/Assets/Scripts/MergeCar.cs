@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class MergeCar : MonoBehaviour
 {
     List<GameObject> Cars = new List<GameObject>();
+    [SerializeField] GameObject disappearingEffect;
 
-    public void MergeLevel1Cars()
+
+    public void MergeLevel1Cars(Button buyCar, Button mergeCar)
     {
-        if (CarSpawner.car1Count < 2)
-            return;
 
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -28,10 +28,23 @@ public class MergeCar : MonoBehaviour
             //particle
             Debug.Log("Merge ife Girdi");
             CarSpawner.car1Count--;
+            //Object Poola Çevrilecek
+            Instantiate(disappearingEffect, Cars[i].transform.position, Quaternion.identity);
+
             Cars[i].gameObject.SetActive(false);
+
+            if (CarSpawner.car1Count < 10)
+            {
+                buyCar.interactable= true;
+            }
         }
         Cars.Clear();
-        Debug.Log("Cars Count: " + Cars.Count);    
+        Debug.Log("Cars Count: " + Cars.Count);
+
+        if (CarSpawner.car1Count < 2)
+        {
+            mergeCar.interactable = false;
+        }
 
     }
 }

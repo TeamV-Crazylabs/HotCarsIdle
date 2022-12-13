@@ -2,21 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class CarSpawner : MonoBehaviour
 {
-    [SerializeField] private CarPool carPool = null;
-    [SerializeField] Button buyCar;
-    int car1Count = 0;
+    private CarPool carPool = null;
+    public static int car1Count = 0;
 
 
     private void Start()
     {
-        buyCar.onClick.AddListener(SpawnCar);
+        carPool= GetComponent<CarPool>();
     }
 
-    public void SpawnCar()
+    public void SpawnCar(Button buyCar)
     {
         if (car1Count < 10)
         {

@@ -10,7 +10,6 @@ public class Flag : MonoBehaviour
         {
             //1 dolar partcile play
             Money.totalDollars += 1;
-            Debug.Log(Money.totalDollars);
         }
         else if (collision.gameObject.layer == 11)
         {

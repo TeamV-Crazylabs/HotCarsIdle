@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarPool : MonoBehaviour
 {
-    private Queue<GameObject> pooledCar;
+    Queue<GameObject> pooledCar;
     [SerializeField] private GameObject firsCarPrefab;
     [SerializeField] private int poolSize;
 
@@ -17,6 +17,7 @@ public class CarPool : MonoBehaviour
             GameObject obj = Instantiate(firsCarPrefab);
             obj.SetActive(false);
             pooledCar.Enqueue(obj);
+            obj.transform.parent = gameObject.transform;
         }
     }
 

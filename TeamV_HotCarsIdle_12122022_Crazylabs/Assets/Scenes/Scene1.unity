@@ -611,7 +611,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Merge
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -638,8 +638,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -2407,7 +2407,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 684bdcb5bde63e14ca840e8e9c73a599, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mergeCar: {fileID: 1659430859}
+  carSpawner: {fileID: 1659430858}
   moneyIndicator: {fileID: 699778946}
+  mergeButton: {fileID: 1727572086}
+  buyCarButton: {fileID: 380818349}
 --- !u!1 &1059572094
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,8 +3750,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -4405,6 +4409,7 @@ GameObject:
   - component: {fileID: 1659430857}
   - component: {fileID: 1659430856}
   - component: {fileID: 1659430858}
+  - component: {fileID: 1659430859}
   m_Layer: 0
   m_Name: CarPool
   m_TagString: Untagged
@@ -4435,7 +4440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1659430855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.485928, y: -8.893002, z: 21.91905}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4454,8 +4459,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1adb59af3d9bfda4e87932a647e6600e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  carPool: {fileID: 1659430856}
-  buyCar: {fileID: 380818349}
+--- !u!114 &1659430859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659430855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2de1eb1938d4d34fa8b8a1a25c1d54a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1727572084
 GameObject:
   m_ObjectHideFlags: 0
@@ -4718,7 +4733,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: AddPin
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4745,8 +4760,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0

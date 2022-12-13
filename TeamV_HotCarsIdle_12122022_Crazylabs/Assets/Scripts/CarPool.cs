@@ -4,28 +4,48 @@ using UnityEngine;
 
 public class CarPool : MonoBehaviour
 {
-    Queue<GameObject> pooledCar;
-    [SerializeField] private GameObject firsCarPrefab;
+    List<Queue<GameObject>> objectPoolsList;
+    Queue<GameObject> pooledLevel1Car;
+    Queue<GameObject> pooledLevel2Car;
+    Queue<GameObject> pooledLevel3Car;
+    [SerializeField] private GameObject[] CarPrefabs;
     [SerializeField] private int poolSize;
 
     private void Awake()
     {
-        pooledCar = new Queue<GameObject>();
+        objectPoolsList = new List<Queue<GameObject>>();
+        pooledLevel1Car = new Queue<GameObject>();
+        pooledLevel2Car = new Queue<GameObject>();
+        pooledLevel3Car = new Queue<GameObject>();
+        objectPoolsList.Add(pooledLevel1Car);
+        objectPoolsList.Add(pooledLevel2Car);
+        objectPoolsList.Add(pooledLevel3Car);
 
-        for (int i = 0; i < poolSize; i++)
+        CreatePools();
+    }
+
+    void CreatePools()
+    {
+        Debug.Log("Objectpoolslist.count: " + objectPoolsList.Count);
+        Debug.Log("Car Prefabs Count: " + CarPrefabs.Length);
+        for (int i = 0; i < objectPoolsList.Count; i++)
         {
-            GameObject obj = Instantiate(firsCarPrefab);
-            obj.SetActive(false);
-            pooledCar.Enqueue(obj);
-            obj.transform.parent = gameObject.transform;
+            for (int j = 0; j < poolSize; j++)
+            {
+                GameObject obj = Instantiate(CarPrefabs[i]);
+                obj.SetActive(false);
+                objectPoolsList[i].Enqueue(obj);
+                obj.transform.parent = gameObject.transform.GetChild(i).transform;
+            }
         }
     }
 
-    public GameObject GetPooledObject()
+
+    public GameObject GetPooledObject(int carLevel)
     {
-        GameObject obj = pooledCar.Dequeue();
+        GameObject obj = objectPoolsList[carLevel].Dequeue();
         obj.SetActive(true);
-        pooledCar.Enqueue(obj);
+        pooledLevel1Car.Enqueue(obj);
         return obj;
     }
 }

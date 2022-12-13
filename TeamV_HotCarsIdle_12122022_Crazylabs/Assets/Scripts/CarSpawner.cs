@@ -8,7 +8,7 @@ public class CarSpawner : MonoBehaviour
 {
     [SerializeField] private CarPool carPool = null;
     [SerializeField] Button buyCar;
-    int carCount = 0;
+    int car1Count = 0;
 
 
     private void Start()
@@ -18,11 +18,11 @@ public class CarSpawner : MonoBehaviour
 
     public void SpawnCar()
     {
-        if (carCount <10 )
+        if (car1Count < 10)
         {
             carPool.GetPooledObject();
-            carCount += 1;
-            Debug.Log("Car Count= " + carCount);
+            car1Count += 1;
+            Debug.Log("Car Count= " + car1Count);
         }
         else
         {

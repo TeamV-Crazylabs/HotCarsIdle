@@ -35,7 +35,7 @@ public class Cars : MonoBehaviour
             Debug.Log("timescale = " + Time.timeScale);
         }
 
-        if (timer >= 2f)
+        if (timer >= 1f)
         {
             Time.timeScale = 1f;
             CarTrail.SetActive(false);

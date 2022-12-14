@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,13 +8,14 @@ public class MergeCar : MonoBehaviour
     List<GameObject> Cars = new List<GameObject>();
     CarPool carPool;
     [SerializeField] GameObject disappearingEffect;
+    [SerializeField] Money money;
     int carIndex = 0;
 
     private void Start()
     {
         carPool = GetComponent<CarPool>();
     }
-    public void MergeCars(Button buyCar, Button mergeCar)
+    public void MergeCars(Button buyCar, Button mergeCar, TextMeshProUGUI MergeCostText)
     {
         if (Cars != null)
         {
@@ -42,7 +44,7 @@ public class MergeCar : MonoBehaviour
         if (Cars == null || Cars.Count < 2)
         {
             carIndex++;
-            MergeCars(buyCar,mergeCar);
+            MergeCars(buyCar,mergeCar,MergeCostText);
         }
         else
         {
@@ -58,6 +60,8 @@ public class MergeCar : MonoBehaviour
             
             carPool.GetPooledObject(carIndex + 1);
             carIndex = 0;
+            money.MergeCost();
+            MergeCostText.text = Money.mergeCost.ToString();
         }
     }
 

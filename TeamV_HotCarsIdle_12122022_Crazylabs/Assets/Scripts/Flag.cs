@@ -21,5 +21,20 @@ public class Flag : MonoBehaviour
             //1 dolar partcile play
             Money.totalDollars += 25;
         }
+        else if (collision.gameObject.layer == 13)
+        {
+            //1 dolar partcile play
+            Money.totalDollars += 125;
+        }
+        else if (collision.gameObject.layer == 14)
+        {
+            //1 dolar partcile play
+            Money.totalDollars += 625;
+        }
+        else if (collision.gameObject.layer == 15)
+        {
+            //1 dolar partcile play
+            Money.totalDollars += 25;
+        }
     }
 }

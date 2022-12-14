@@ -8,6 +8,7 @@ public class CarPool : MonoBehaviour
     Queue<GameObject> pooledLevel1Car = new Queue<GameObject>();
     Queue<GameObject> pooledLevel2Car = new Queue<GameObject>();
     Queue<GameObject> pooledLevel3Car = new Queue<GameObject>();
+    Queue<GameObject> pooledLevel4Car = new Queue<GameObject>();
     [SerializeField] private GameObject[] CarPrefabs;
     [SerializeField] private int poolSize;
 
@@ -16,14 +17,13 @@ public class CarPool : MonoBehaviour
         objectPoolsList.Add(pooledLevel1Car);
         objectPoolsList.Add(pooledLevel2Car);
         objectPoolsList.Add(pooledLevel3Car);
+        objectPoolsList.Add(pooledLevel4Car);
 
         CreatePools();
     }
 
     void CreatePools()
     {
-        Debug.Log("Objectpoolslist.count: " + objectPoolsList.Count);
-        Debug.Log("Car Prefabs Count: " + CarPrefabs.Length);
         for (int i = 0; i < objectPoolsList.Count; i++)
         {
             for (int j = 0; j < poolSize; j++)

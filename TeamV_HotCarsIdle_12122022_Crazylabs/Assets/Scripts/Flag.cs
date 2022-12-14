@@ -9,8 +9,11 @@ public class Flag : MonoBehaviour
     [SerializeField] ParticleSystem Dollar25Particle;
     [SerializeField] ParticleSystem Dollar125Particle;
     [SerializeField] ParticleSystem Dollar625Particle;
+    [SerializeField] Animator cashAnim;
     private void OnCollisionEnter(Collision collision)
     {
+        cashAnim.SetTrigger("Cash");
+
         if (collision.gameObject.layer == 10)
         {
             //1 dolar partcile play

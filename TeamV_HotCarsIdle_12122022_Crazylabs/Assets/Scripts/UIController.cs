@@ -15,7 +15,7 @@ public class UIController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mergeButton.onClick.AddListener(() => { mergeCar.MergeLevel1Cars(buyCarButton, mergeButton); });
+        mergeButton.onClick.AddListener(() => { mergeCar.MergeCars(buyCarButton, mergeButton); });
         buyCarButton.onClick.AddListener(() => { carSpawner.SpawnCar(buyCarButton, mergeButton); });
     }
 

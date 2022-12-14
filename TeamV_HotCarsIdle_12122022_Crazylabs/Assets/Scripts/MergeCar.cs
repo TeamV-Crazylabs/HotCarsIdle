@@ -5,19 +5,27 @@ using UnityEngine.UI;
 public class MergeCar : MonoBehaviour
 {
     List<GameObject> Cars = new List<GameObject>();
+    CarPool carPool;
     [SerializeField] GameObject disappearingEffect;
 
-
+    private void Start()
+    {
+        carPool = GetComponent<CarPool>();
+    }
     public void MergeLevel1Cars(Button buyCar, Button mergeCar)
     {
-
-        for (int i = 0; i < transform.childCount; i++)
+        if(Cars != null)
         {
-            if (transform.GetChild(i).gameObject == null)
+            Cars.Clear();
+        }
+
+        for (int i = 0; i < transform.GetChild(0).transform.childCount; i++)
+        {
+            if (transform.GetChild(0).GetChild(i).gameObject == null)
                 return;
 
-            if (transform.GetChild(i).gameObject.activeInHierarchy)
-                Cars.Add(transform.GetChild(i).gameObject);
+            if (transform.GetChild(0).GetChild(i).gameObject.activeInHierarchy)
+                Cars.Add(transform.GetChild(0).GetChild(i).gameObject);
         }
 
         if (Cars == null)
@@ -27,18 +35,19 @@ public class MergeCar : MonoBehaviour
         {
             //particle
             Debug.Log("Merge ife Girdi");
-            CarSpawner.car1Count--;
-            //Object Poola Çevrilecek
+            Debug.Log("i = " + i);
+            //Object Poola ï¿½evrilecek
             Instantiate(disappearingEffect, Cars[i].transform.position, Quaternion.identity);
-
             Cars[i].gameObject.SetActive(false);
+            carPool.GetPooledObject(1);
 
             if (CarSpawner.car1Count < 10)
             {
                 buyCar.interactable= true;
             }
+            CarSpawner.car1Count--;
         }
-        Cars.Clear();
+        
         Debug.Log("Cars Count: " + Cars.Count);
 
         if (CarSpawner.car1Count < 2)

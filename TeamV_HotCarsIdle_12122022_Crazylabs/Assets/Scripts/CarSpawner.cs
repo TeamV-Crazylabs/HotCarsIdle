@@ -22,7 +22,7 @@ public class CarSpawner : MonoBehaviour
         }
         if (car1Count < 10)
         {
-            carPool.GetPooledObject();
+            carPool.GetPooledObject(0);
             car1Count += 1;
             Debug.Log("Car Count= " + car1Count);
         }

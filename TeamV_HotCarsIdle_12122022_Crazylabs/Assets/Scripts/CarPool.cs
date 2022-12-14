@@ -45,7 +45,7 @@ public class CarPool : MonoBehaviour
     {
         GameObject obj = objectPoolsList[carLevel].Dequeue();
         obj.SetActive(true);
-        pooledLevel1Car.Enqueue(obj);
+        objectPoolsList[carLevel].Enqueue(obj);
         return obj;
     }
 }

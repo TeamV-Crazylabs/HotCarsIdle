@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Cars : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class Cars : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             timer = 0;
             Time.timeScale = 2f;

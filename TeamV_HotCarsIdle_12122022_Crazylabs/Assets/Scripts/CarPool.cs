@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class CarPool : MonoBehaviour
 {
-    List<Queue<GameObject>> objectPoolsList;
-    Queue<GameObject> pooledLevel1Car;
-    Queue<GameObject> pooledLevel2Car;
-    Queue<GameObject> pooledLevel3Car;
+    List<Queue<GameObject>> objectPoolsList = new List<Queue<GameObject>>();
+    Queue<GameObject> pooledLevel1Car = new Queue<GameObject>();
+    Queue<GameObject> pooledLevel2Car = new Queue<GameObject>();
+    Queue<GameObject> pooledLevel3Car = new Queue<GameObject>();
     [SerializeField] private GameObject[] CarPrefabs;
     [SerializeField] private int poolSize;
 
     private void Awake()
     {
-        objectPoolsList = new List<Queue<GameObject>>();
-        pooledLevel1Car = new Queue<GameObject>();
-        pooledLevel2Car = new Queue<GameObject>();
-        pooledLevel3Car = new Queue<GameObject>();
         objectPoolsList.Add(pooledLevel1Car);
         objectPoolsList.Add(pooledLevel2Car);
         objectPoolsList.Add(pooledLevel3Car);

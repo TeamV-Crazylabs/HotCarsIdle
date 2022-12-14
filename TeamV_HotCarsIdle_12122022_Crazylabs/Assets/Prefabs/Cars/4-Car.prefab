@@ -518,6 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarTrail: {fileID: 8298030373147630038}
+  MoneyParticle: {fileID: 0}
 --- !u!1001 &3969945289334113036
 PrefabInstance:
   m_ObjectHideFlags: 0

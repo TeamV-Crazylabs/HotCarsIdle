@@ -1,7 +1,8 @@
 # HotCarsIdle
 Hot Wheels Themed Idle Clicker Game Prototype made for Crazyhubs Istanbul
 
-![image_005_0000 (1) (1)](https://user-images.githubusercontent.com/104275944/207917079-2e3b39c9-108f-4e5a-90f0-830a08cbe827.jpg)
+![image_005_0000 (1) (1) (2)](https://user-images.githubusercontent.com/104275944/207917677-42f87438-b49b-48f1-8a18-df006d71252a.jpg)
+
 
 ![Screenshot 2022-12-15 at 18 14 58](https://user-images.githubusercontent.com/104275944/207897546-e57c6f3f-018b-4325-948d-40a6f0145c57.png)
 ![Screenshot 2022-12-15 at 18 11 22](https://user-images.githubusercontent.com/104275944/207897562-4db8e3b5-4aa0-4be6-aeac-b595715861c0.png)

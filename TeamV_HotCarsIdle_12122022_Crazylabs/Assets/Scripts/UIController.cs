@@ -40,7 +40,7 @@ public class UIController : MonoBehaviour
         mergeCostText.text = "$ " + Money.mergeCost.ToString();
         carCostText.text = "$ " + Money.carCost.ToString();
         
-        moneyIndicator.text = "$ " + Money.totalDollars.ToString();
+        moneyIndicator.text = "$" + Money.totalDollars.ToString();
         mapCostText.text = "$ " + Money.mapCost.ToString();
 
         if (Money.totalDollars<Money.mergeCost)

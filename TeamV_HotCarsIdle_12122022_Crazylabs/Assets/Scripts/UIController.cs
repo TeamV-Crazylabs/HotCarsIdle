@@ -92,6 +92,10 @@ public class UIController : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        
     }
 }

@@ -10,10 +10,16 @@ public class Flag : MonoBehaviour
     [SerializeField] ParticleSystem Dollar125Particle;
     [SerializeField] ParticleSystem Dollar625Particle;
     [SerializeField] Animator cashAnim;
+
+    AudioSource tickSound;
+    private void Start()
+    {
+        tickSound= GetComponent<AudioSource>();
+    }
     private void OnCollisionEnter(Collision collision)
     {
         cashAnim.SetTrigger("Cash");
-
+        tickSound.Play();
         if (collision.gameObject.layer == 10)
         {
             //1 dolar partcile play

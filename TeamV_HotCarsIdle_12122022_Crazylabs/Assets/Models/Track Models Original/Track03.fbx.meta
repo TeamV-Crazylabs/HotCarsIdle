@@ -1,9 +1,19 @@
 fileFormatVersion: 2
-guid: 13204688b4408864ea16ef66f55cddd8
+guid: ce4a164902f94624c9ee9b95a8fbab8d
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: StartPoint
+    second: {fileID: 2100000, guid: 8237710dc42cf9441a4e5b0201ccf4b3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Track
+    second: {fileID: 2100000, guid: 1fde31064190b3a4d89f70ee33d87498, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -46,8 +56,8 @@ ModelImporter:
     importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
-    swapUVChannels: 0
-    generateSecondaryUV: 0
+    swapUVChannels: 1
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1

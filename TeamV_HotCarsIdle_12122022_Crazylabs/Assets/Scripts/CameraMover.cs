@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CameraMover : MonoBehaviour
 {
-    public float rotationSpeed = 0.5f;
+    private float rotationSpeed = 0.5f;
 
     public static bool DebugMode = false;
 

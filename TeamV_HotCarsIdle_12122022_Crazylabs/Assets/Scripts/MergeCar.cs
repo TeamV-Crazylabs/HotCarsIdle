@@ -27,7 +27,7 @@ public class MergeCar : MonoBehaviour
         }
 
         //When more cars added the condition must be changed.
-        if (carIndex >= 3)
+        if (carIndex >= 9)
         {
             Debug.Log("Reached Maximum Car Level");
             mergeCar.interactable = false;

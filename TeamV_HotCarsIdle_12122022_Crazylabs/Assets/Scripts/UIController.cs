@@ -39,7 +39,7 @@ public class UIController : MonoBehaviour
     {
         mergeCostText.text = "$ " + Money.mergeCost.ToString();
         carCostText.text = "$ " + Money.carCost.ToString();
-        pinCostText.text = "$ " + Money.pinCost.ToString();
+        
         moneyIndicator.text = "$ " + Money.totalDollars.ToString();
         mapCostText.text = "$ " + Money.mapCost.ToString();
 
@@ -55,12 +55,14 @@ public class UIController : MonoBehaviour
         if (Money.totalDollars < Money.pinCost)
         {
             buyPinButton.interactable = false;
+            pinCostText.text = "MAX";
         }
-        else
+        else if (!AddPin.pinIsMax)
         {
             buyPinButton.interactable = true;
+            pinCostText.text = "$ " + Money.pinCost.ToString();
         }
-
+        
         if (Money.totalDollars < Money.carCost)
         {
             buyCarButton.interactable = false;

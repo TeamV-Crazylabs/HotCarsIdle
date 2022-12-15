@@ -1226,6 +1226,7 @@ GameObject:
   - component: {fileID: 684107010}
   - component: {fileID: 684107012}
   - component: {fileID: 684107011}
+  - component: {fileID: 684107013}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1291,6 +1292,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684107009}
   m_CullTransparentMesh: 1
+--- !u!95 &684107013
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684107009}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39e3b47e3df3340978556a189453d7c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &699778944
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,6 +2053,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.639
       objectReference: {fileID: 0}
+    - target: {fileID: 5319047988728038831, guid: 6c845dacfce708a4a8d731d59463b32c,
+        type: 3}
+      propertyPath: cashAnim
+      value: 
+      objectReference: {fileID: 684107013}
     - target: {fileID: 7185322655005573857, guid: 6c845dacfce708a4a8d731d59463b32c,
         type: 3}
       propertyPath: m_TagString
@@ -2176,6 +2202,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.639
       objectReference: {fileID: 0}
+    - target: {fileID: 5319047988728038831, guid: 6c845dacfce708a4a8d731d59463b32c,
+        type: 3}
+      propertyPath: cashAnim
+      value: 
+      objectReference: {fileID: 684107013}
     - target: {fileID: 7185322655005573857, guid: 6c845dacfce708a4a8d731d59463b32c,
         type: 3}
       propertyPath: m_TagString
@@ -3311,6 +3342,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.639
       objectReference: {fileID: 0}
+    - target: {fileID: 5319047988728038831, guid: 6c845dacfce708a4a8d731d59463b32c,
+        type: 3}
+      propertyPath: cashAnim
+      value: 
+      objectReference: {fileID: 684107013}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c845dacfce708a4a8d731d59463b32c, type: 3}
 --- !u!1 &1659430855
@@ -3767,6 +3803,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.639
       objectReference: {fileID: 0}
+    - target: {fileID: 5319047988728038831, guid: 6c845dacfce708a4a8d731d59463b32c,
+        type: 3}
+      propertyPath: cashAnim
+      value: 
+      objectReference: {fileID: 684107013}
     - target: {fileID: 7185322655005573857, guid: 6c845dacfce708a4a8d731d59463b32c,
         type: 3}
       propertyPath: m_TagString
@@ -4292,6 +4333,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.683
       objectReference: {fileID: 0}
+    - target: {fileID: 5319047988728038831, guid: 6c845dacfce708a4a8d731d59463b32c,
+        type: 3}
+      propertyPath: cashAnim
+      value: 
+      objectReference: {fileID: 684107013}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c845dacfce708a4a8d731d59463b32c, type: 3}
 --- !u!4 &3244263116472039642

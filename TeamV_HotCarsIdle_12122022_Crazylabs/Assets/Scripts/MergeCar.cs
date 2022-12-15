@@ -7,6 +7,7 @@ public class MergeCar : MonoBehaviour
 {
     List<GameObject> Cars = new List<GameObject>();
     CarPool carPool;
+    CarUnlocker carUnlocker;
     [SerializeField] GameObject disappearingEffect;
     [SerializeField] Money money;
     int carIndex = 0;
@@ -14,9 +15,12 @@ public class MergeCar : MonoBehaviour
     private void Start()
     {
         carPool = GetComponent<CarPool>();
+        carUnlocker = GetComponent<CarUnlocker>();
+        Debug.Log("Car index: " + carIndex);
     }
     public void MergeCars(Button buyCar, Button mergeCar, TextMeshProUGUI MergeCostText)
     {
+        Debug.Log("Car index: " + carIndex);
         if (Cars != null)
         {
             Cars.Clear();
@@ -43,6 +47,7 @@ public class MergeCar : MonoBehaviour
 
         if (Cars == null || Cars.Count < 2)
         {
+            Debug.Log("car index increased");
             carIndex++;
             MergeCars(buyCar,mergeCar,MergeCostText);
         }
@@ -59,6 +64,7 @@ public class MergeCar : MonoBehaviour
             }
             
             carPool.GetPooledObject(carIndex + 1);
+            carUnlocker.UnlockCar(carIndex + 1);
             carIndex = 0;
             money.MergeCost();
             MergeCostText.text = Money.mergeCost.ToString();

@@ -13,6 +13,7 @@ public class CarSpawner : MonoBehaviour
     private void Start()
     {
         carPool= GetComponent<CarPool>();
+        car1Count = 1;
     }
 
     public void SpawnCar(Button buyCar, Button mergeCar,TextMeshProUGUI carCostText)

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CameraMover : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class CameraMover : MonoBehaviour
     void Update()
     {
 
-        if (Input.touchCount == 1)
+        if (Input.touchCount == 1 && !EventSystem.current.IsPointerOverGameObject())
         {
             Touch screenTouch = Input.GetTouch(0);
 

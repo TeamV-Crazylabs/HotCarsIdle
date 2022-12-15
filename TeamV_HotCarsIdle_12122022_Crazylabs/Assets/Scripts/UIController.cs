@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour
 {
@@ -30,6 +31,7 @@ public class UIController : MonoBehaviour
         mergeButton.onClick.AddListener(() => { mergeCar.MergeCars(buyCarButton, mergeButton,mergeCostText); });
         buyCarButton.onClick.AddListener(() => { carSpawner.SpawnCar(buyCarButton, mergeButton,carCostText); });
         buyPinButton.onClick.AddListener(() => { addPin.BuyPin(buyPinButton,pinCostText); });
+        buyMapButton.onClick.AddListener(NexLevelButton);
         mapCostText.text = "$ " + Money.mapCost.ToString();
 
     }
@@ -83,5 +85,13 @@ public class UIController : MonoBehaviour
     public void OpenDebugMenu()
     {
         debugMenu.SetActive(true);
+    }
+    public void NexLevelButton()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            SceneManager.LoadScene(0);
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

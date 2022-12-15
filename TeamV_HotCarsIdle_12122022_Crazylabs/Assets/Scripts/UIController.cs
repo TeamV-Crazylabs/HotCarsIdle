@@ -14,10 +14,12 @@ public class UIController : MonoBehaviour
     [SerializeField] Button mergeButton;
     [SerializeField] Button buyCarButton;
     [SerializeField] Button buyPinButton;
+    [SerializeField] Button buyMapButton;
 
     [SerializeField] TextMeshProUGUI mergeCostText;
     [SerializeField] TextMeshProUGUI carCostText;
     [SerializeField] TextMeshProUGUI pinCostText;
+    [SerializeField] TextMeshProUGUI mapCostText;
 
     [SerializeField] GameObject debugMenu;
     //[SerializeField] TextMeshProUGUI mapCostText;
@@ -28,12 +30,18 @@ public class UIController : MonoBehaviour
         mergeButton.onClick.AddListener(() => { mergeCar.MergeCars(buyCarButton, mergeButton,mergeCostText); });
         buyCarButton.onClick.AddListener(() => { carSpawner.SpawnCar(buyCarButton, mergeButton,carCostText); });
         buyPinButton.onClick.AddListener(() => { addPin.BuyPin(buyPinButton,pinCostText); });
+        mapCostText.text = "$ " + Money.mapCost.ToString();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        moneyIndicator.text = Money.totalDollars.ToString();
+        mergeCostText.text = "$ " + Money.mergeCost.ToString();
+        carCostText.text = "$ " + Money.carCost.ToString();
+        pinCostText.text = "$ " + Money.pinCost.ToString();
+        moneyIndicator.text = "$ " + Money.totalDollars.ToString();
+        mapCostText.text = "$ " + Money.mapCost.ToString();
 
         if (Money.totalDollars<Money.mergeCost)
         {
@@ -60,6 +68,14 @@ public class UIController : MonoBehaviour
         else
         {
             buyCarButton.interactable = true;
+        }
+        if (Money.totalDollars < Money.mapCost)
+        {
+            buyMapButton.interactable = false;
+        }
+        else
+        {
+            buyMapButton.interactable = true;
         }
     }
     public void OpenDebugMenu()

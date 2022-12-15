@@ -10,10 +10,10 @@ public class Money : MonoBehaviour
     public static int mapCost;
     void Start()
     {
-        carCost = 0;
-        pinCost = 0;
-        mergeCost =0;
-        mapCost = 0;
+        carCost = 20;
+        pinCost = 20;
+        mergeCost =50;
+        mapCost = 1000;
         //playerprefs
         totalDollars = 0;
     }

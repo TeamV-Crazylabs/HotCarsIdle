@@ -15,7 +15,7 @@ public class Money : MonoBehaviour
         mergeCost =50;
         mapCost = 1000;
         //playerprefs
-        totalDollars = 0;
+        totalDollars = PlayerPrefs.GetInt("totalDolars");
     }
 
     public void CarCost()

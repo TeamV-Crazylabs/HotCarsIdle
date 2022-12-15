@@ -91,10 +91,13 @@ public class UIController : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             SceneManager.LoadScene(0);
+            PlayerPrefs.SetInt("totalDolars", Money.totalDollars);
         }
         else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+            PlayerPrefs.SetInt("totalDolars", Money.totalDollars);
         }
         
     }

@@ -18,6 +18,8 @@ public class UIController : MonoBehaviour
     [SerializeField] TextMeshProUGUI mergeCostText;
     [SerializeField] TextMeshProUGUI carCostText;
     [SerializeField] TextMeshProUGUI pinCostText;
+
+    [SerializeField] GameObject debugMenu;
     //[SerializeField] TextMeshProUGUI mapCostText;
 
     // Start is called before the first frame update
@@ -59,5 +61,9 @@ public class UIController : MonoBehaviour
         {
             buyCarButton.interactable = true;
         }
+    }
+    public void OpenDebugMenu()
+    {
+        debugMenu.SetActive(true);
     }
 }
